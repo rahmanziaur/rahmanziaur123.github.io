@@ -1,0 +1,2554 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>Sustainable Development Goals - MBSTU</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Georgia&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Reset and common font */
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+      }
+      body {
+        background-color: #f5f5f5;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style-type: none;
+      }
+
+      /* Header styles */
+      .mbstu-header {
+        background-color: #9b2e2b !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+      .mbstu-logo img {
+        transition: transform 0.3s ease;
+      }
+      .mbstu-logo:hover img {
+        transform: scale(1.05);
+      }
+      .mbstu-nav ul li a {
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      .mbstu-nav ul li a:hover {
+        color: #ffd700 !important;
+      }
+      .mbstu-nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 80%;
+        height: 2px;
+        background: #ffd700;
+        transition: transform 0.3s ease;
+      }
+      .mbstu-nav ul li a:hover::after {
+        transform: translateX(-50%) scaleX(1);
+      }
+
+      .mbstu-sdg-header {
+        background: linear-gradient(
+          135deg,
+          #8b2d2d 0%,
+          #b33939 50%,
+          #8b2d2d 100%
+        );
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 1.5rem 0;
+      }
+
+      /* Logo Styles */
+      .header-logo {
+        height: 90px;
+        width: auto;
+        transition: transform 0.3s ease;
+      }
+
+      .header-logo:hover {
+        transform: scale(1.05);
+      }
+
+      .header-logo-sdg {
+        height: 140px;
+        width: auto;
+        transition: transform 0.3s ease;
+      }
+
+      .header-logo-sdg:hover {
+        transform: rotate(5deg) scale(1.05);
+      }
+
+      /* University Name Styles */
+      .university-name {
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .university-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        line-height: 1.2;
+        margin-bottom: 0.3rem;
+      }
+
+      .university-subtitle {
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        margin-bottom: 0.2rem;
+      }
+
+      .university-location {
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .university-title {
+          font-size: 1.6rem;
+        }
+
+        .university-subtitle {
+          font-size: 1.3rem;
+        }
+
+        .university-location {
+          font-size: 1.1rem;
+        }
+
+        .header-logo {
+          height: 70px;
+        }
+
+        .header-logo-sdg {
+          height: 100px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mbstu-sdg-header .row {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .col-auto {
+          margin-bottom: 1rem;
+        }
+
+        .university-title {
+          font-size: 1.4rem;
+        }
+
+        .university-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .university-location {
+          font-size: 1rem;
+        }
+
+        .header-logo {
+          height: 60px;
+        }
+
+        .header-logo-sdg {
+          height: 90px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .university-title {
+          font-size: 1.2rem;
+          letter-spacing: 1px;
+        }
+
+        .university-subtitle {
+          font-size: 1rem;
+        }
+
+        .university-location {
+          font-size: 0.9rem;
+        }
+
+        .header-logo {
+          height: 50px;
+        }
+
+        .header-logo-sdg {
+          height: 70px;
+        }
+      }
+
+      /* Hero Section */
+      .sdg-hero-section {
+        width: 100%;
+        min-height: 500px;
+        position: relative;
+        overflow: hidden;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        margin-bottom: 0;
+      }
+      .sdg-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://mbstu.ac.bd/wp-content/uploads/2024/10/rsz_36.jpg")
+          center center/cover no-repeat;
+        filter: brightness(50%);
+        z-index: 1;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+      }
+      .sdg-content {
+        position: relative;
+        z-index: 2;
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+      .sdg-content h1 {
+        color: #ffffff;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+      .sdg-content p {
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+      }
+
+      /* Year Section */
+      .year-section {
+        background: linear-gradient(135deg, #e8f4f8 0%, #ffffff 100%);
+        padding: 60px 0;
+        margin-top: 0;
+      }
+      .year-section h2 {
+        color: #004080;
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+      .year-section p {
+        color: #333;
+        font-size: 1.3rem;
+        font-family: "Georgia", serif;
+        font-weight: 500;
+      }
+
+      /* Card Styles */
+      .sdg-cards-section {
+        padding: 50px 0;
+        background-color: #f9f9f9;
+      }
+      .card {
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        background: #fff;
+      }
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      }
+      .card img {
+        transition: transform 0.4s ease;
+        height: 200px;
+        object-fit: cover;
+      }
+      .card:hover img {
+        transform: scale(1.08);
+      }
+      .card-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #333;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .card-footer {
+        padding: 12px;
+      }
+      .card-footer .btn {
+        background: #004080;
+        border: none;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+      .card-footer .btn:hover {
+        background: #00306a;
+        transform: scale(1.05);
+      }
+
+      /* For more info */
+      .more-info-section {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      }
+
+      .github-card {
+        border: 2px solid #e0e0e0;
+        transition: all 0.4s ease;
+      }
+
+      .github-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+        border-color: #333;
+      }
+
+      .github-card .btn-dark {
+        background-color: #24292e;
+        border: none;
+        transition: all 0.3s ease;
+      }
+
+      .github-card .btn-dark:hover {
+        background-color: #1a1e22;
+        transform: scale(1.05);
+      }
+
+      .github-card .btn-outline-dark {
+        border-color: #24292e;
+        color: #24292e;
+        transition: all 0.3s ease;
+      }
+
+      .github-card .btn-outline-dark:hover {
+        background-color: #24292e;
+        color: #fff;
+        transform: scale(1.05);
+      }
+
+      .github-card .badge {
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .github-card .fa-github {
+        transition: transform 0.3s ease;
+      }
+
+      .github-card:hover .fa-github {
+        transform: rotate(360deg);
+      }
+
+      @media (max-width: 768px) {
+        .more-info-section h2 {
+          font-size: 1.8rem;
+        }
+
+        .github-card .btn-lg {
+          font-size: 0.95rem;
+          padding: 0.5rem 1rem;
+        }
+      }
+
+      /* Footer */
+      footer {
+        background: #1a1a1a;
+        color: #ccc;
+      }
+      footer h5 {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      footer a {
+        transition: color 0.3s ease;
+      }
+      footer a:hover {
+        color: #ffd700 !important;
+      }
+      footer .border-top {
+        border-color: #444 !important;
+      }
+      #back-to-top-kits {
+        transition: transform 0.3s ease;
+      }
+      #back-to-top-kits:hover {
+        transform: translateY(-3px);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .mbstu-nav ul {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .sdg-content h1 {
+          font-size: 2rem;
+        }
+        .year-section h2 {
+          font-size: 2rem;
+        }
+      }
+
+      .video-section {
+        background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+      }
+
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+      }
+
+      @media (max-width: 768px) {
+        .video-section h2 {
+          font-size: 1.8rem;
+        }
+      }
+
+      /* pdf */
+      .sdg-reports-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      }
+
+      .report-card {
+        transition: all 0.3s ease;
+        border: 1px solid #e0e0e0;
+      }
+
+      .report-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+      }
+
+      .report-card h5 {
+        line-height: 1.4;
+      }
+
+      .report-card .btn {
+        transition: all 0.3s ease;
+      }
+
+      .report-card .btn-primary {
+        background-color: #004080;
+        border: none;
+      }
+
+      .report-card .btn-primary:hover {
+        background-color: #00306a;
+        transform: scale(1.05);
+      }
+
+      .report-card .btn-outline-primary {
+        border-color: #004080;
+        color: #004080;
+      }
+
+      .report-card .btn-outline-primary:hover {
+        background-color: #004080;
+        color: #fff;
+        transform: scale(1.05);
+      }
+
+      .report-icon {
+        flex-shrink: 0;
+      }
+
+      @media (max-width: 768px) {
+        .sdg-reports-section h2 {
+          font-size: 1.8rem;
+        }
+
+        .report-card {
+          text-align: center;
+        }
+
+        .report-card .d-flex {
+          flex-direction: column;
+          align-items: center !important;
+        }
+
+        .report-icon {
+          margin-bottom: 1rem;
+        }
+      }
+
+      /* Activities Documentation Section */
+      .activities-documentation-section {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      }
+
+      .accordion-item {
+        border: 1px solid #e0e0e0;
+        margin-bottom: 15px;
+        border-radius: 8px !important;
+        overflow: hidden;
+      }
+
+      .accordion-button {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #004080;
+        background-color: #f8f9fa;
+      }
+
+      .accordion-button:not(.collapsed) {
+        background-color: #004080;
+        color: #fff;
+      }
+
+      .accordion-button:focus {
+        box-shadow: none;
+        border-color: #004080;
+      }
+
+      .accordion-body {
+        background-color: #fff;
+        padding: 20px;
+      }
+
+      .accordion-body p {
+        margin-bottom: 10px;
+      }
+
+      .accordion-body ul {
+        margin-left: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .activities-documentation-section h2 {
+          font-size: 1.8rem;
+        }
+
+        .accordion-button {
+          font-size: 0.95rem;
+        }
+      }
+
+      /* Accordian new */
+      .complete-activities-section {
+        background: linear-gradient(135deg, #f0f4f8 0%, #e9ecef 100%);
+      }
+
+      .accordion-item {
+        border: 1px solid #dee2e6;
+        margin-bottom: 12px;
+        border-radius: 8px !important;
+        overflow: hidden;
+      }
+
+      .accordion-button {
+        font-weight: 600;
+        font-size: 1.05rem;
+        color: #004080;
+        background-color: #f8f9fa;
+        padding: 1rem 1.25rem;
+      }
+
+      .accordion-button:not(.collapsed) {
+        background-color: #004080;
+        color: #fff;
+      }
+
+      .accordion-button:focus {
+        box-shadow: none;
+        border-color: #004080;
+      }
+
+      .accordion-body {
+        background-color: #fff;
+        padding: 1.5rem;
+        line-height: 1.7;
+      }
+
+      .accordion-body h6 {
+        color: #004080;
+        margin-top: 1rem;
+      }
+
+      .accordion-body ul {
+        margin-left: 20px;
+        margin-bottom: 10px;
+      }
+
+      .accordion-body a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+
+      .accordion-body a:hover {
+        text-decoration: underline;
+      }
+
+      /* SDG Table Styles */
+      .sdg-table-container {
+        border: 2px solid #e0e0e0;
+      }
+
+      .table-primary {
+        background-color: #004080 !important;
+        color: white;
+      }
+
+      .table-primary th {
+        color: white !important;
+        font-weight: 600;
+      }
+
+      .table-hover tbody tr:hover {
+        background-color: #f0f4f8;
+      }
+
+      .table td,
+      .table th {
+        vertical-align: middle;
+        padding: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .complete-activities-section h2 {
+          font-size: 1.8rem;
+        }
+
+        .accordion-button {
+          font-size: 0.9rem;
+          padding: 0.75rem 1rem;
+        }
+
+        .accordion-body {
+          padding: 1rem;
+        }
+
+        .table {
+          font-size: 0.85rem;
+        }
+      }
+
+      /* contact */
+      .contact-disclaimer-section {
+        background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+      }
+
+      .disclaimer-card {
+        border-left: 4px solid #004080;
+      }
+
+      .resources-card {
+        border: 2px solid #e0e0e0;
+      }
+
+      .resource-item {
+        transition: all 0.3s ease;
+      }
+
+      .resource-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-card {
+        background: linear-gradient(135deg, #f0f8ff 0%, #e6f2ff 100%);
+        border: 2px solid #004080;
+      }
+
+      .contact-details {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-info a {
+        color: #0066cc;
+        transition: color 0.3s ease;
+      }
+
+      .contact-info a:hover {
+        color: #004080;
+        text-decoration: underline !important;
+      }
+
+      .resource-item .btn {
+        transition: all 0.3s ease;
+      }
+
+      .resource-item .btn:hover {
+        transform: scale(1.02);
+      }
+
+      @media (max-width: 768px) {
+        .contact-details .row {
+          text-align: center;
+        }
+
+        .contact-info {
+          margin-top: 1rem;
+        }
+
+        .contact-info .d-flex {
+          justify-content: center;
+        }
+      }
+
+      @media (min-width: 1400px) {
+        .container,
+        .container-lg,
+        .container-md,
+        .container-sm,
+        .container-xl,
+        .container-xxl {
+          max-width: 1620px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="mbstu-sdg-header py-3">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left: MBSTU Logo -->
+          <div class="col-auto">
+            <a href="https://mbstu.ac.bd/" class="text-decoration-none">
+              <img
+                src="https://mbstu.ac.bd/wp-content/uploads/2023/08/MBSTU_logo.png"
+                alt="MBSTU Logo"
+                class="header-logo"
+              />
+            </a>
+          </div>
+
+          <!-- Center: University Name -->
+          <div class="col">
+            <div class="university-name">
+              <h1 class="university-title mb-0">MAWLANA BHASHANI</h1>
+              <h2 class="university-subtitle mb-0">Science and Technology</h2>
+              <h3 class="university-location mb-0">University, Tangail-1902</h3>
+            </div>
+          </div>
+
+          <!-- Right: SDG Logo -->
+          <div class="col-auto">
+            <a
+              href="https://github.com/rahmanziaur/MBSTU-SDG-Activities-2026"
+              target="_blank"
+              class="text-decoration-none"
+            >
+              <img
+                src="images/sdg_logo.jpeg"
+                alt="SDG Logo"
+                class="header-logo-sdg"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="sdg-hero-section position-relative">
+      <div class="sdg-bg"></div>
+      <div class="container text-center sdg-content">
+        <h1 class="display-4 fw-bold" style="letter-spacing: 1px">
+          Sustainable Development Goals
+        </h1>
+        <p class="lead text-white mt-4 mx-auto" style="max-width: 750px">
+          The Sustainable Development Goals (SDGs) provide a common platform
+          where organisation, civil society and government representatives can
+          contribute to solving the world's biggest sustainable development
+          challenges.
+        </p>
+      </div>
+    </section>
+
+    <section class="sdg-reports-section py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold" style="color: #004080; font-size: 2.5rem">
+            SDG Reports
+          </h2>
+          <p class="lead text-muted">
+            Access our detailed reports on SDG-aligned activities and
+            initiatives
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- MBSTU SDG Report 2024 - Full Width -->
+          <div class="col-lg-12">
+            <div class="report-card p-4 bg-white rounded shadow-sm h-100">
+              <div class="d-flex align-items-start">
+                <div class="report-icon me-3">
+                  <i
+                    class="fas fa-file-pdf"
+                    style="font-size: 3rem; color: #d32f2f"
+                  ></i>
+                </div>
+                <div class="flex-grow-1">
+                  <h5 class="fw-bold mb-3" style="color: #333">
+                    📌 MBSTU SDG Report 2024
+                  </h5>
+                  <p class="text-muted mb-3">
+                    UN Sustainable Development Goal (SDG) Contributions and
+                    Progress Report. The report is developed by the Quality
+                    Review and Ranking Committee (QRRC), MBSTU.
+                  </p>
+                  <div class="d-flex gap-2 flex-wrap">
+                    <a
+                      href="https://github.com/rahmanziaur/MBSTU-SDG-Activities-2026/blob/main/MBSTU%20SDG%20Report%202024/SDG%20REPORT2024.pdf"
+                      target="_blank"
+                      class="btn btn-primary btn-sm"
+                    >
+                      <i class="fas fa-eye me-1"></i> View PDF
+                    </a>
+                    <a
+                      href="https://github.com/rahmanziaur/MBSTU-SDG-Activities-2026/raw/main/MBSTU%20SDG%20Report%202024/SDG%20REPORT2024.pdf"
+                      download
+                      class="btn btn-outline-primary btn-sm"
+                    >
+                      <i class="fas fa-download me-1"></i> Download
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Report 1 -->
+          <div class="col-lg-6">
+            <div class="report-card p-4 bg-white rounded shadow-sm h-100">
+              <div class="d-flex align-items-start">
+                <div class="report-icon me-3">
+                  <i
+                    class="fas fa-file-pdf"
+                    style="font-size: 3rem; color: #d32f2f"
+                  ></i>
+                </div>
+                <div class="flex-grow-1">
+                  <h5 class="fw-bold mb-3" style="color: #333">
+                    📌 Appendix 1: Career Club SDGs-aligned activities
+                  </h5>
+                  <p class="text-muted mb-3">
+                    Detailed report on Career Club initiatives aligned with
+                    Sustainable Development Goals
+                  </p>
+                  <div class="d-flex gap-2 flex-wrap">
+                    <a
+                      href="https://github.com/rahmanziaur/MBSTU-SDG-Activities-2026/blob/main/Community%20Activities/SDG%20MBSTU%20Career%20Club%20Profile_compressed.pdf"
+                      target="_blank"
+                      class="btn btn-primary btn-sm"
+                    >
+                      <i class="fas fa-eye me-1"></i> View PDF
+                    </a>
+                    <a
+                      href="https://github.com/rahmanziaur/MBSTU-SDG-Activities-2026/raw/main/Community%20Activities/SDG%20MBSTU%20Career%20Club%20Profile_compressed.pdf"
+                      download
+                      class="btn btn-outline-primary btn-sm"
+                    >
+                      <i class="fas fa-download me-1"></i> Download
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Report 2 -->
+          <div class="col-lg-6">
+            <div class="report-card p-4 bg-white rounded shadow-sm h-100">
+              <div class="d-flex align-items-start">
+                <div class="report-icon me-3">
+                  <i
+                    class="fas fa-file-pdf"
+                    style="font-size: 3rem; color: #d32f2f"
+                  ></i>
+                </div>
+                <div class="flex-grow-1">
+                  <h5 class="fw-bold mb-3" style="color: #333">
+                    📌 Appendix 2: Come for Road Child (CRC) SDGs-aligned
+                    activities
+                  </h5>
+                  <p class="text-muted mb-3">
+                    Comprehensive overview of CRC-MBSTU initiatives working for
+                    a sustainable future
+                  </p>
+                  <div class="d-flex gap-2 flex-wrap">
+                    <a
+                      href="https://github.com/rahmanziaur/MBSTU-SDG-Activities-2026/blob/main/Community%20Activities/CRC-MBSTU-and-the-SDGs-Working-for-a-Sustainable-Future.pdf"
+                      target="_blank"
+                      class="btn btn-primary btn-sm"
+                    >
+                      <i class="fas fa-eye me-1"></i> View PDF
+                    </a>
+                    <a
+                      href="https://github.com/rahmanziaur/MBSTU-SDG-Activities-2026/raw/main/Community%20Activities/CRC-MBSTU-and-the-SDGs-Working-for-a-Sustainable-Future.pdf"
+                      download
+                      class="btn btn-outline-primary btn-sm"
+                    >
+                      <i class="fas fa-download me-1"></i> Download
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="more-info-section py-5 bg-white">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="fw-bold mb-4" style="color: #004080; font-size: 2.5rem">
+              For More Information
+            </h2>
+            <p class="lead text-muted mb-4">
+              Explore our comprehensive repository documenting MBSTU's various
+              initiatives and activities aligned with the United Nations
+              Sustainable Development Goals (SDGs)
+            </p>
+
+            <div class="github-card p-4 bg-light rounded shadow-sm">
+              <div
+                class="d-flex align-items-center justify-content-center mb-3"
+              >
+                <i
+                  class="fab fa-github"
+                  style="font-size: 3.5rem; color: #333"
+                ></i>
+              </div>
+              <h4 class="fw-bold mb-3" style="color: #333">
+                MBSTU-SDG-Activities-2026
+              </h4>
+              <p class="text-muted mb-4">
+                This repository documents various initiatives at Mawlana
+                Bhashani Science and Technology University that align with UN
+                SDGs, reflecting the university's dedication to education,
+                research, innovation, inclusiveness, and community well-being.
+              </p>
+              <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a
+                  href="https://github.com/rahmanziaur/MBSTU-SDG-Activities-2026"
+                  target="_blank"
+                  class="btn btn-dark btn-lg"
+                >
+                  <i class="fab fa-github me-2"></i> Visit GitHub Repository
+                </a>
+                <a
+                  href="https://github.com/rahmanziaur/MBSTU-SDG-Activities-2026/blob/main/README.md"
+                  target="_blank"
+                  class="btn btn-outline-dark btn-lg"
+                >
+                  <i class="fas fa-book me-2"></i> Read Documentation
+                </a>
+              </div>
+
+              <!-- Additional Info Badges -->
+              <div class="mt-4 d-flex gap-3 justify-content-center flex-wrap">
+                <span class="badge bg-secondary px-3 py-2">
+                  <i class="fas fa-code-branch me-1"></i> 0 Forks
+                </span>
+                <span class="badge bg-secondary px-3 py-2">
+                  <i class="fas fa-star me-1"></i> 0 Stars
+                </span>
+                <span class="badge bg-success px-3 py-2">
+                  <i class="fas fa-balance-scale me-1"></i> MPL-2.0 License
+                </span>
+              </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="mt-5">
+              <p class="text-muted mb-2">
+                <small
+                  >Last updated: November 9, 2025 by Quality Review and Ranking
+                  Committee (QRRC), MBSTU</small
+                >
+              </p>
+              <!-- <p class="text-muted">
+                <i class="fas fa-envelope me-2"></i> For inquiries:
+                <a href="mailto:registrar@mbstu.ac.bd" style="color: #004080"
+                  >registrar@mbstu.ac.bd</a
+                >
+              </p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="year-section text-center">
+      <div class="container">
+        <h2 class="fw-bold">Year 2024</h2>
+        <p class="mb-0">
+          Select a goal to discover examples of our contributions to the SDGs:
+        </p>
+      </div>
+    </section>
+
+    <!-- SDG Cards -->
+    <section class="sdg-cards-section">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/1.jpeg"
+                  class="card-img-top"
+                  alt="Goal 1: No poverty"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Goal 1: No poverty</h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/2.jpeg"
+                  class="card-img-top"
+                  alt="Goal 2: Zero hunger"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Goal 2: Zero hunger</h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/3.jpeg"
+                  class="card-img-top"
+                  alt="Goal 3: Health and well-being"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Goal 3: Health and well-being</h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/4.jpeg"
+                  class="card-img-top"
+                  alt="Goal 4: Quality education"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Goal 4: Quality education</h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/5.jpeg"
+                  class="card-img-top"
+                  alt="Goal 5: Gender equality"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Goal 5: Gender equality</h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/6.jpeg"
+                  class="card-img-top"
+                  alt="Goal 6: Clean water and sanitation"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Goal 6: Clean water and sanitation</h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/7.jpeg"
+                  class="card-img-top"
+                  alt="Goal 7: Affordable and clean energy"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Goal 7: Affordable and clean energy</h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/8.jpeg"
+                  class="card-img-top"
+                  alt="Goal 8: Decent work and economic growth"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">
+                  Goal 8: Decent work and economic growth
+                </h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/9.jpeg"
+                  class="card-img-top"
+                  alt="Goal 9: Industry, innovation and infrastructure"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">
+                  Goal 9: Industry, innovation and infrastructure
+                </h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 10 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/10.jpeg"
+                  class="card-img-top"
+                  alt="Goal 10: Reduced inequalities"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Goal 10: Reduced inequalities</h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 11 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/11.jpeg"
+                  class="card-img-top"
+                  alt="Goal 11: Sustainable cities and communities"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">
+                  Goal 11: Sustainable cities and communities
+                </h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 12 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/12.jpeg"
+                  class="card-img-top"
+                  alt="Goal 12: Responsible consumption and production"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">
+                  Goal 12: Responsible consumption and production
+                </h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 13 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/13.jpeg"
+                  class="card-img-top"
+                  alt="Goal 13: Climate action"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Goal 13: Climate action</h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 14 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/14.jpeg"
+                  class="card-img-top"
+                  alt="Goal 14: Life below water"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Goal 14: Life below water</h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 15 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/15.jpeg"
+                  class="card-img-top"
+                  alt="Goal 15: Life on land"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Goal 15: Life on land</h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 16 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/16.jpeg"
+                  class="card-img-top"
+                  alt="Goal 16: Peace, justice and strong institutions"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">
+                  Goal 16: Peace, justice and strong institutions
+                </h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 17 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="card h-100 text-center shadow-sm">
+              <a href="#" target="_blank">
+                <img
+                  src="images/17.jpeg"
+                  class="card-img-top"
+                  alt="Goal 17: Partnerships for the goals"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Goal 17: Partnerships for the goals</h5>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary btn-sm w-100">Learn more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section py-5 bg-white">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+            <h2 class="fw-bold mb-3" style="color: #004080; font-size: 2.5rem">
+              Career Club - Boot Camp
+            </h2>
+            <p class="lead text-muted mb-4">
+              Watch our latest video showcasing the Career Club Boot Camp
+              initiative
+            </p>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/r6UwZd3cheU"
+                title="Career Club - Boot Camp"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="activities-documentation-section py-5 bg-white">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold" style="color: #004080; font-size: 2.5rem">
+            SDG Activities Documentation
+          </h2>
+          <p class="lead text-muted mb-4">
+            Comprehensive overview of MBSTU initiatives aligned with UN
+            Sustainable Development Goals
+          </p>
+          <a
+            href="https://github.com/rahmanziaur/MBSTU-SDG-Activities-2026"
+            target="_blank"
+            class="btn btn-dark btn-lg mb-4"
+          >
+            <i class="fab fa-github me-2"></i> View Full Documentation on GitHub
+          </a>
+        </div>
+
+        <!-- Activities Accordion -->
+        <section class="complete-activities-section py-5 bg-light">
+          <div class="container">
+            <div class="text-center mb-5">
+              <h2 class="fw-bold" style="color: #004080; font-size: 2.5rem">
+                📘 MBSTU-SDG-Activities-2025
+              </h2>
+              <p class="lead text-muted mb-4">
+                This repository documents various initiatives and activities at
+                <strong
+                  >Mawlana Bhashani Science and Technology University
+                  (MBSTU)</strong
+                >
+                that align with the
+                <strong
+                  >United Nations Sustainable Development Goals (SDGs)</strong
+                >. These activities reflect the university's dedication to
+                education, research, innovation, inclusiveness, and community
+                well-being.
+              </p>
+            </div>
+
+            <!-- Activities Accordion -->
+            <div class="row justify-content-center">
+              <div class="col-lg-11">
+                <div class="accordion" id="fullActivitiesAccordion">
+                  <!-- Activity 1: Digital Awareness Bootcamp -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#digitalBootcamp"
+                      >
+                        🎓 Digital Awareness Bootcamp for Females
+                      </button>
+                    </h2>
+                    <div
+                      id="digitalBootcamp"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#fullActivitiesAccordion"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          The Digital Awareness Bootcamp for Females was held on
+                          <strong>October 30, 2025</strong>, at the CSE Lab,
+                          Academic Building-03, MBSTU. Organized by the
+                          <strong>MBSTU Career Club</strong> in collaboration
+                          with <strong>IQAC, MBSTU</strong>, the event focused
+                          on promoting
+                          <strong>SDG 5: Gender Equality</strong> by empowering
+                          young women with essential digital skills.
+                        </p>
+                        <p>
+                          Students from Santosh Islami University Girls' High
+                          School participated, gaining hands-on exposure to
+                          digital tools and resources aimed at bridging the
+                          gender gap in technology. The session provided a
+                          platform to enhance digital literacy and encourage
+                          female participation in the digital economy.
+                        </p>
+                        <p><strong>Reference:</strong></p>
+                        <ul>
+                          <li>
+                            MBSTU Career Club & IQAC. (2025, October 30).
+                            Digital Awareness Bootcamp for Females.
+                            <a
+                              href="https://youtu.be/r6UwZd3cheU"
+                              target="_blank"
+                              >YouTube Video</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Activity 2: Cyber Security Club -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#cyberSecurity"
+                      >
+                        🛡️ MBSTU Cyber Security Club
+                      </button>
+                    </h2>
+                    <div
+                      id="cyberSecurity"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#fullActivitiesAccordion"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          The <strong>MBSTU Cyber Security Club</strong> has
+                          been at the forefront of promoting cyber awareness,
+                          digital literacy, and innovation in technology.
+                        </p>
+
+                        <h6 class="mt-3 fw-bold">
+                          1. Road to Cyber Security with Ostad
+                        </h6>
+                        <p>
+                          The club successfully organized the event
+                          <strong>"Road to Cyber Security with Ostad"</strong>,
+                          in collaboration with <strong>Ostad</strong>,
+                          <strong>MBSTU Photographic Society</strong>, and
+                          <strong>MBSTU Career Club</strong>. The initiative
+                          focused on empowering students with essential
+                          cybersecurity knowledge and fostering a culture of
+                          responsible digital engagement.
+                        </p>
+                        <p><strong>References:</strong></p>
+                        <ul>
+                          <li>
+                            MBSTU Cyber Security Club. (2025, October 29).
+                            <a
+                              href="https://www.facebook.com/profile.php?id=61567679759219"
+                              target="_blank"
+                              >Facebook</a
+                            >
+                          </li>
+                          <li>
+                            News24BD. (2025, October 29).
+                            <a
+                              href="https://news24bd.net/?p=15778"
+                              target="_blank"
+                              >মাভাবিপ্রবিতে সাইবার নিরাপত্তা সচেতনতা মাস ২০২৫
+                              উদযাপন</a
+                            >
+                          </li>
+                        </ul>
+
+                        <h6 class="mt-4 fw-bold">
+                          2. MBSTU Cyber Security Expo 2025
+                        </h6>
+                        <p>
+                          Held on <strong>January 18, 2025</strong>, the
+                          <strong>MBSTU Cyber Security Expo</strong> featured an
+                          <strong
+                            >Intra-University Capture the Flag (CTF) and Quiz
+                            Competition</strong
+                          >, <strong>Innovation and Project Showcasing</strong>,
+                          and a
+                          <strong
+                            >Workshop on "Introduction to Cyber
+                            Security."</strong
+                          >
+                          The event was organized by the MBSTU Cyber Security
+                          Club in collaboration with the
+                          <strong>University Cyber Center</strong> and
+                          inaugurated by
+                          <strong>Professor Dr. Md. Anwarul Azim Akhand</strong
+                          >, Honorable Vice-Chancellor of MBSTU.
+                        </p>
+                        <p><strong>References:</strong></p>
+                        <ul>
+                          <li>
+                            MBSTU Cyber Security Club. (2025, January 18).
+                            <a
+                              href="https://www.facebook.com/share/p/16TzhbPqcX/"
+                              target="_blank"
+                              >Facebook</a
+                            >
+                          </li>
+                          <li>
+                            Jaijaidin. (2025, January 18).
+                            <a
+                              href="https://www.jaijaidinbd.com/education/523904"
+                              target="_blank"
+                              >মাভাবিপ্রবিতে সাইবার সিকিউরিটি এক্সপো-২০২৫
+                              অনুষ্ঠিত</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Activity 3: Blood Grouping Program -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#bloodGrouping"
+                      >
+                        🩸 Bandhan, MBSTU Unit – Blood Grouping & Awareness
+                        Program
+                      </button>
+                    </h2>
+                    <div
+                      id="bloodGrouping"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#fullActivitiesAccordion"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          In celebration of the
+                          <strong>26th Founding Anniversary of MBSTU</strong>,
+                          <strong>Bandhan, MBSTU Unit</strong> organized a
+                          <strong>Free Blood Grouping Camp</strong> as part of
+                          the university day rally. A total of
+                          <strong>64 participants</strong> benefited from this
+                          free health initiative, which aimed to raise awareness
+                          about blood donation and community health.
+                        </p>
+                        <p><strong>Reference:</strong></p>
+                        <ul>
+                          <li>
+                            Bandhan MBSTU Unit. (2025, October 12).
+                            <a
+                              href="https://www.facebook.com/share/p/1Cjdf3Hpky/"
+                              target="_blank"
+                              >Facebook</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Activity 4: Animal Welfare -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#animalWelfare"
+                      >
+                        🐾 Animal Welfare and Rescue Society x MBSTU Career Club
+                      </button>
+                    </h2>
+                    <div
+                      id="animalWelfare"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#fullActivitiesAccordion"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          On <strong>October 20, 2025</strong>, the
+                          <strong>Animal Welfare and Rescue Society</strong> and
+                          <strong>MBSTU Career Club</strong>, with media support
+                          from the <strong>MBSTU Photographic Society</strong>,
+                          jointly organized an
+                          <strong>Animal Welfare Vaccination Camp</strong> at
+                          the university campus. More than
+                          <strong>25 campus dogs and cats</strong> received free
+                          rabies vaccinations. The initiative emphasized
+                          compassion, responsibility, and creating a safer
+                          campus environment for all living beings.
+                        </p>
+                        <p><strong>Reference:</strong></p>
+                        <ul>
+                          <li>
+                            Daily Inqilab. (2025, October 20).
+                            <a
+                              href="https://dailyinqilab.com/campus/news/821787"
+                              target="_blank"
+                              >মাভাবিপ্রবিতে প্রাণী কল্যাণ ক্যাম্প অনুষ্ঠিত</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Activity 5: Bangla Language Workshop -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#banglaWorkshop"
+                      >
+                        🗣️ Department of Mechanical Engineering – Bangla
+                        Language Workshop
+                      </button>
+                    </h2>
+                    <div
+                      id="banglaWorkshop"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#fullActivitiesAccordion"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          The
+                          <strong>Department of Mechanical Engineering</strong>
+                          organized a workshop titled
+                          <strong
+                            >"সর্বস্তরে বাংলা ভাষা: শুদ্ধ বানানে, শুদ্ধ
+                            উচ্চারণে"</strong
+                          >
+                          (Use of Bangla in Correct Spelling and Pronunciation)
+                          and inaugurated an
+                          <strong>Open Reading Library</strong> on
+                          <strong>October 20, 2025</strong>. The event aimed to
+                          promote accurate and respectful use of the Bangla
+                          language across academic and administrative
+                          activities, reinforcing national identity and
+                          linguistic integrity.
+                        </p>
+                        <p><strong>Reference:</strong></p>
+                        <ul>
+                          <li>
+                            Bahanno News. (2025, October 20).
+                            <a
+                              href="https://www.bahannonews.com/details/article/10177169/"
+                              target="_blank"
+                              >মাভাবিপ্রবিতে বাংলা ভাষা: শুদ্ধ বানানে শুদ্ধ
+                              উচ্চারণে কর্মশালা ও মুক্ত পাঠাগার উদ্বোধন</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Activity 6: Mental Health -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mentalHealth"
+                      >
+                        🧠 Mental Health & Well-being Initiatives
+                      </button>
+                    </h2>
+                    <div
+                      id="mentalHealth"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#fullActivitiesAccordion"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          MBSTU places great emphasis on students'
+                          <strong
+                            >mental health, emotional well-being, and personal
+                            development</strong
+                          >. Several departments and student organizations have
+                          taken initiatives to create awareness about mental
+                          wellness and suicide prevention through workshops,
+                          seminars, and interactive discussions.
+                        </p>
+
+                        <h6 class="mt-3 fw-bold">
+                          1. Seminar on Suicide Prevention and Mental Health
+                          Awareness
+                        </h6>
+                        <p>
+                          On <strong>May 21, 2025</strong>, a seminar titled
+                          <em
+                            >"আত্মহত্যা প্রতিরোধ ও মানসিক স্বাস্থ্য বিষয়ে
+                            সচেতনতা বৃদ্ধি"</em
+                          >
+                          (Awareness on Suicide Prevention and Mental Health)
+                          was held at MBSTU. The event aimed to educate students
+                          about early signs of depression, coping strategies,
+                          and the importance of seeking help. Experts discussed
+                          the role of family, peers, and institutions in
+                          maintaining mental well-being.
+                        </p>
+                        <p><strong>Reference:</strong></p>
+                        <ul>
+                          <li>
+                            Daily Nagorik Sangbad. (2025, May 21).
+                            <a
+                              href="https://www.dailynagoriksangbad.com/6641"
+                              target="_blank"
+                              >আত্মহত্যা প্রতিরোধ ও মানসিক স্বাস্থ্য বিষয়ে
+                              সচেতনতা বৃদ্ধির লক্ষ্যে সেমিনার অনুষ্ঠিত
+                              মাভাবিপ্রবিতে</a
+                            >
+                          </li>
+                        </ul>
+
+                        <h6 class="mt-4 fw-bold">
+                          2. "এত হাসি কোথায় গেলো!" — Seminar on Mental Health
+                          and Emotional Training
+                        </h6>
+                        <p>
+                          On <strong>December 7, 2025</strong>, the
+                          <strong>Aloron Club, MBSTU</strong>, organized a
+                          seminar titled <em>"এত হাসি কোথায় গেলো!"</em> (Where
+                          Has All the Laughter Gone!) focusing on mental health,
+                          mindfulness, and emotional resilience. The interactive
+                          session engaged participants in mindfulness exercises
+                          and motivational discussions, encouraging positive
+                          mental health practices on campus.
+                        </p>
+                        <p><strong>Reference:</strong></p>
+                        <ul>
+                          <li>
+                            Sarabangla. (2025, December 7).
+                            <a
+                              href="https://sarabangla.net/news/post-1007644/"
+                              target="_blank"
+                              >এত হাসি কোথায় গেলো! — মানসিক স্বাস্থ্য ও মন
+                              প্রশিক্ষণ বিষয়ক সেমিনার অনুষ্ঠিত মাভাবিপ্রবিতে</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Activity 7: Workshops & Training -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#workshopsTraining"
+                      >
+                        🧩 Workshops, Training & Research Capacity Building
+                      </button>
+                    </h2>
+                    <div
+                      id="workshopsTraining"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#fullActivitiesAccordion"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          MBSTU continues to strengthen its
+                          <strong
+                            >academic and administrative excellence</strong
+                          >
+                          through workshops, training programs, and
+                          capacity-building sessions organized by various
+                          departments and the
+                          <strong
+                            >Institutional Quality Assurance Cell (IQAC)</strong
+                          >.
+                        </p>
+
+                        <h6 class="mt-3 fw-bold">
+                          1. Implementation of OBE Curriculum: Continuous
+                          Improvement and Associated Challenges
+                        </h6>
+                        <p>
+                          From <strong>September 21–23, 2025</strong>, a two-day
+                          workshop titled
+                          <em
+                            >"Implementation of OBE Curriculum: Continuous
+                            Improvement and Associated Challenges"</em
+                          >
+                          was organized by <strong>IQAC, MBSTU</strong>. The
+                          workshop focused on integrating
+                          <strong>Outcome-Based Education (OBE)</strong>
+                          practices and enhancing teaching-learning quality in
+                          line with international accreditation standards.
+                        </p>
+                        <p><strong>Reference:</strong></p>
+                        <ul>
+                          <li>
+                            Tangail News BD. (2025, September 21–23).
+                            <a
+                              href="https://www.tangailnewsbd.com/2025/09/21/মাভাবিপ্রবিতে-ওবিই-কারিক/"
+                              target="_blank"
+                              >Implementation of OBE Curriculum</a
+                            >
+                          </li>
+                        </ul>
+
+                        <h6 class="mt-4 fw-bold">
+                          2. A New Approach in Teaching-Learning at MBSTU
+                        </h6>
+                        <p>
+                          A workshop organized by
+                          <strong>IQAC, MBSTU</strong> on
+                          <strong>February 4, 2024</strong>, introduced modern
+                          pedagogical methods, digital learning tools, and
+                          continuous assessment strategies to improve classroom
+                          engagement.
+                        </p>
+                        <p><strong>Reference:</strong></p>
+                        <ul>
+                          <li>
+                            Jaijaidin BD. (2024, February 4).
+                            <a
+                              href="https://www.jaijaidinbd.com/education/437459"
+                              target="_blank"
+                              >A New Approach in Teaching-Learning at MBSTU</a
+                            >
+                          </li>
+                        </ul>
+
+                        <h6 class="mt-4 fw-bold">
+                          3. Financial Management in Public Sector — Training
+                          Workshop
+                        </h6>
+                        <p>
+                          On <strong>June 27, 2025</strong>, IQAC organized a
+                          two-day workshop on
+                          <em>"Financial Management in the Public Sector"</em>
+                          with a special focus on university financial
+                          administration and accountability. This initiative
+                          enhanced the capacity of administrative staff in
+                          budget planning, audit processes, and efficient fund
+                          utilization.
+                        </p>
+                        <p><strong>Reference:</strong></p>
+                        <ul>
+                          <li>
+                            Daily Apandesh. (2025, June 27).
+                            <a
+                              href="https://www.dailyapandesh.com/education/news/36635"
+                              target="_blank"
+                              >সরকারি খাতে আর্থিক ব্যবস্থাপনার প্রয়োগ</a
+                            >
+                          </li>
+                        </ul>
+
+                        <h6 class="mt-4 fw-bold">
+                          4. Faculty Development Workshop on Pedagogy and
+                          Administrative Efficiency
+                        </h6>
+                        <p>
+                          In <strong>October 2025</strong>, MBSTU hosted a
+                          comprehensive faculty development workshop focusing on
+                          teaching techniques, administrative skills, and
+                          departmental coordination to enhance overall academic
+                          quality.
+                        </p>
+                        <p><strong>Reference:</strong></p>
+                        <ul>
+                          <li>
+                            Bonik Barta. (2025, October).
+                            <a
+                              href="https://www.bonikbarta.com/bangladesh/ugtKElQrKQnhTTph"
+                              target="_blank"
+                              >মাভাবিপ্রবি শিক্ষকদের অনুষদভিত্তিক শিক্ষাদান
+                              পদ্ধতি ও প্রশাসনিক দক্ষতা বৃদ্ধিবিষয়ক প্রশিক্ষণ
+                              কর্মশালা</a
+                            >
+                          </li>
+                        </ul>
+
+                        <h6 class="mt-4 fw-bold">
+                          5. Workshop on Qualitative and Quantitative Data
+                          Analysis
+                        </h6>
+                        <p>
+                          The
+                          <strong
+                            >Department of Criminology and Police
+                            Science</strong
+                          >
+                          organized a research methodology workshop on
+                          <strong>November 11, 2025</strong>, emphasizing data
+                          collection, statistical analysis, and interpretation
+                          using both qualitative and quantitative techniques.
+                          This initiative encouraged interdisciplinary research
+                          capacity among students and faculty.
+                        </p>
+                        <p><strong>Reference:</strong></p>
+                        <ul>
+                          <li>
+                            The Daily Campus. (2025, November 11).
+                            <a
+                              href="https://thedailycampus.com/engineering-university/128453/"
+                              target="_blank"
+                              >মাভাবিপ্রবির ক্রিমিনোলজি এন্ড পুলিশ সায়েন্স
+                              বিভাগে গবেষণা কর্মশালা</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SDG Alignment Table -->
+            <div class="row justify-content-center mt-5">
+              <div class="col-lg-11">
+                <div class="sdg-table-container p-4 bg-white rounded shadow-sm">
+                  <h3 class="text-center fw-bold mb-4" style="color: #004080">
+                    🌍 SDG Alignment Summary
+                  </h3>
+                  <p class="text-center text-muted mb-4">
+                    These activities collectively contribute to the following
+                    <strong
+                      >United Nations Sustainable Development Goals
+                      (SDGs):</strong
+                    >
+                  </p>
+
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                      <thead class="table-primary">
+                        <tr>
+                          <th style="width: 30%">SDG</th>
+                          <th style="width: 30%">Focus Area</th>
+                          <th style="width: 40%">Example Activities</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <strong>SDG 3 – Good Health and Well-being</strong>
+                          </td>
+                          <td>Promoting public health and mental wellness</td>
+                          <td>
+                            <em
+                              >Blood donation, vaccination, and mental health
+                              seminars</em
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>SDG 4 – Quality Education</strong></td>
+                          <td>
+                            Skill development, workshops, and pedagogical
+                            improvement
+                          </td>
+                          <td>
+                            <em
+                              >OBE workshops, faculty training, Bangla language
+                              programs</em
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>SDG 5 – Gender Equality</strong></td>
+                          <td>
+                            Empowering women and promoting digital literacy
+                          </td>
+                          <td>
+                            <em>Digital Awareness Bootcamp for Females</em>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong
+                              >SDG 8 – Decent Work and Economic Growth</strong
+                            >
+                          </td>
+                          <td>Administrative and financial efficiency</td>
+                          <td>
+                            <em>Public sector management and staff training</em>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong
+                              >SDG 9 – Industry, Innovation and
+                              Infrastructure</strong
+                            >
+                          </td>
+                          <td>Promoting cybersecurity and innovation</td>
+                          <td>
+                            <em>Cyber Security Club activities and expos</em>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>SDG 15 – Life on Land</strong></td>
+                          <td>Animal welfare and biodiversity protection</td>
+                          <td><em>Campus animal vaccination program</em></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong
+                              >SDG 16 – Peace, Justice and Strong
+                              Institutions</strong
+                            >
+                          </td>
+                          <td>
+                            Transparent governance and inclusive education
+                          </td>
+                          <td><em>IQAC and administrative workshops</em></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>SDG 17 – Partnerships for the Goals</strong>
+                          </td>
+                          <td>
+                            Collaborations between departments and external
+                            partners
+                          </td>
+                          <td>
+                            <em
+                              >Joint events with clubs, industries, and media
+                              organizations</em
+                            >
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Last Updated -->
+            <div class="text-center mt-5">
+              <p class="text-muted">
+                <small
+                  ><i class="fas fa-clock me-2"></i>Last updated: November 9,
+                  2025 by Quality Review and Ranking Committee (QRRC),
+                  MBSTU</small
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- View More Button -->
+        <div class="text-center mt-5">
+          <p class="text-muted mb-3">
+            <i class="fas fa-file-alt me-2"></i> For complete documentation
+            including workshops, training programs, and research initiatives
+          </p>
+          <a
+            href="https://github.com/rahmanziaur/MBSTU-SDG-Activities-2026#readme"
+            target="_blank"
+            class="btn btn-primary btn-lg"
+          >
+            <i class="fab fa-github me-2"></i> Read Full Documentation
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-disclaimer-section py-5 bg-white">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <!-- Disclaimer Card -->
+            <div class="disclaimer-card p-4 mb-4 bg-light rounded shadow-sm">
+              <div class="d-flex align-items-start mb-3">
+                <i
+                  class="fas fa-info-circle me-3"
+                  style="font-size: 2rem; color: #004080"
+                ></i>
+                <div>
+                  <h4 class="fw-bold mb-3" style="color: #004080">
+                    Data Transparency & Disclaimer
+                  </h4>
+                </div>
+              </div>
+              <p class="text-muted" style="line-height: 1.8">
+                The data and information submitted in this Impact Ranking
+                Application have been collected from respective departments and
+                offices of
+                <strong
+                  >Mawlana Bhashani Science and Technology University
+                  (MBSTU)</strong
+                >. A dedicated team under the
+                <strong
+                  >MBSTU Quality Review and Ranking Committee (QRRC)</strong
+                >
+                has organized, verified, and documented all materials for
+                ranking purposes.
+              </p>
+              <p class="text-muted mb-0" style="line-height: 1.8">
+                All information provided has been compiled in good faith and
+                represents MBSTU's activities and contributions to the best of
+                our knowledge at the time of submission. The university is
+                committed to transparency and accountability in reporting its
+                SDG-related initiatives.
+              </p>
+            </div>
+
+            <!-- Resources Links -->
+            <div
+              class="resources-card p-4 mb-4 bg-white rounded shadow-sm border"
+            >
+              <h5 class="fw-bold mb-4" style="color: #004080">
+                <i class="fas fa-link me-2"></i> Official Resources
+              </h5>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="resource-item p-3 bg-light rounded">
+                    <h6 class="fw-bold mb-2" style="color: #333">
+                      <i
+                        class="fas fa-file-alt me-2"
+                        style="color: #004080"
+                      ></i>
+                      Annual SDG Report
+                    </h6>
+                    <p class="text-muted small mb-2">
+                      Available at the university website:
+                    </p>
+                    <a
+                      href="https://sdg.mbstu.ac.bd/sdg2024"
+                      target="_blank"
+                      class="btn btn-sm btn-primary mb-2 w-100"
+                    >
+                      <i class="fas fa-external-link-alt me-1"></i> Visit
+                      Official Site
+                    </a>
+                    <p class="text-muted small mb-1">Alternative Link:</p>
+                    <a
+                      href="https://github.com/rahmanziaur/MBSTU-SDG-Activities-2026/tree/main/MBSTU%20SDG%20Report%202024"
+                      target="_blank"
+                      class="btn btn-sm btn-outline-secondary w-100"
+                    >
+                      <i class="fab fa-github me-1"></i> GitHub Repository
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="resource-item p-3 bg-light rounded">
+                    <h6 class="fw-bold mb-2" style="color: #333">
+                      <i
+                        class="fas fa-folder-open me-2"
+                        style="color: #004080"
+                      ></i>
+                      Supporting Documentation
+                    </h6>
+                    <p class="text-muted small mb-2">
+                      Accessible via GitHub Repository:
+                    </p>
+                    <a
+                      href="https://github.com/rahmanziaur/MBSTU-SDG-Activities-2026"
+                      target="_blank"
+                      class="btn btn-sm btn-dark w-100"
+                    >
+                      <i class="fab fa-github me-1"></i> View All Documentation
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-card p-4 bg-gradient rounded shadow-sm">
+              <div class="text-center mb-4">
+                <i
+                  class="fas fa-envelope-open-text"
+                  style="font-size: 2.5rem; color: #004080"
+                ></i>
+                <h5 class="fw-bold mt-3 mb-2" style="color: #004080">
+                  Need Additional Information?
+                </h5>
+                <p class="text-muted mb-0">
+                  Should any information require additional clarification,
+                  verification, or supporting documentation, please contact:
+                </p>
+              </div>
+
+              <div class="contact-details p-4 bg-white rounded">
+                <div class="row">
+                  <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <div class="contact-avatar mb-3">
+                      <i
+                        class="fas fa-user-circle"
+                        style="font-size: 4rem; color: #004080"
+                      ></i>
+                    </div>
+                    <h6 class="fw-bold mb-1" style="color: #333">
+                      Dr. Ziaur Rahman
+                    </h6>
+                    <p class="text-muted small mb-0">
+                      Primary Research Contact & Secretary
+                    </p>
+                    <p class="text-muted small">
+                      Quality Review and Ranking Committee (QRRC)
+                    </p>
+                  </div>
+
+                  <div class="col-md-8">
+                    <div class="contact-info">
+                      <div class="d-flex align-items-start mb-3">
+                        <i
+                          class="fas fa-envelope me-3 mt-1"
+                          style="color: #004080"
+                        ></i>
+                        <div>
+                          <strong class="d-block mb-1">Email</strong>
+                          <a
+                            href="mailto:zia@mbstu.ac.bd"
+                            class="text-decoration-none"
+                            >zia@mbstu.ac.bd</a
+                          >
+                        </div>
+                      </div>
+
+                      <div class="d-flex align-items-start mb-3">
+                        <i
+                          class="fas fa-phone-alt me-3 mt-1"
+                          style="color: #004080"
+                        ></i>
+                        <div>
+                          <strong class="d-block mb-1"
+                            >Phone (Bangladesh)</strong
+                          >
+                          <a
+                            href="tel:+8801738652939"
+                            class="text-decoration-none"
+                            >+880 1738 652939</a
+                          >
+                        </div>
+                      </div>
+
+                      <div class="d-flex align-items-start">
+                        <i
+                          class="fas fa-phone-alt me-3 mt-1"
+                          style="color: #004080"
+                        ></i>
+                        <div>
+                          <strong class="d-block mb-1"
+                            >Phone (Australia)</strong
+                          >
+                          <a
+                            href="tel:+61466303817"
+                            class="text-decoration-none"
+                            >+61 466 303 817</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center mt-4">
+                <p class="text-muted mb-0">
+                  <i class="fas fa-handshake me-2"></i>
+                  We remain available to provide any further information or
+                  documentation as needed to support this application.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light pt-5 pb-3">
+      <div class="container">
+        <div class="row text-start">
+          <div class="col-md-3 mb-4">
+            <a href="/" class="d-block mb-3">
+              <img
+                src="https://mbstu.ac.bd/wp-content/uploads/2023/08/MBSTU_logo.png"
+                alt="MBSTU Logo"
+                style="max-width: 120px"
+              />
+            </a>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="/" class="text-light text-decoration-none"
+                  >MAWLANA BHASHANI SCIENCE AND TECHNOLOGY UNIVERSITY</a
+                >
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt me-2"></i> Santosh, Tangail -
+                1902
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-4">
+            <h5>Academic</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="/academics-detail/"
+                  class="text-light text-decoration-none"
+                  >Undergraduate Programs</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="/faculty-of-engineering/"
+                  class="text-light text-decoration-none"
+                  >Faculty of Engineering</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="/faculty-of-life-science/"
+                  class="text-light text-decoration-none"
+                  >Faculty of Life Science</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="/faculty-of-science/"
+                  class="text-light text-decoration-none"
+                  >Faculty of Science</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="/faculty-of-business-studies/"
+                  class="text-light text-decoration-none"
+                  >Faculty of Business Studies</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="/faculty-of-social-science/"
+                  class="text-light text-decoration-none"
+                  >Faculty of Social Science</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/faculty-of-arts/"
+                  class="text-light text-decoration-none"
+                  >Faculty of Arts</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-4">
+            <h5>Useful Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="/bhashani/ict-cell/"
+                  class="text-light text-decoration-none"
+                  >ICT Cell</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="/bncc/" class="text-light text-decoration-none"
+                  >BNCC</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="/central-library/"
+                  class="text-light text-decoration-none"
+                  >Central Library</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="/residential-halls/"
+                  class="text-light text-decoration-none"
+                  >Residential Halls</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="/students-welfare-and-counseling/"
+                  class="text-light text-decoration-none"
+                  >Students' Welfare and Counseling</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="/registrar-office/"
+                  class="text-light text-decoration-none"
+                  >Registrar Office</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/research-cell/"
+                  class="text-light text-decoration-none"
+                  >Research Cell</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-4">
+            <h5>Contact</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-phone-alt me-2"></i> +880921 55399
+              </li>
+              <li class="mb-2"><i class="fas fa-fax me-2"></i> +88092155400</li>
+              <li class="mb-3">
+                <i class="fas fa-envelope me-2"></i>
+                <a
+                  href="mailto:registrar@mbstu.ac.bd"
+                  class="text-light text-decoration-none"
+                  >registrar@mbstu.ac.bd</a
+                >
+              </li>
+            </ul>
+            <h5 class="mt-4">Dhaka Liaison Office</h5>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fas fa-location-arrow me-2"></i> Alamin Apon Hights,
+                Flat No. C-12, D-12, 2/1/B Road 03, Shaymoli, Dhaka.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div
+            class="col-12 d-flex justify-content-between align-items-center border-top pt-3"
+          >
+            <div>
+              <a
+                href="https://mbstu.ac.bd/"
+                class="text-light text-decoration-none"
+                >© 2025 Mawlana Bhashani Science and Technology University</a
+              >
+            </div>
+            <div id="back-to-top-kits" style="cursor: pointer">
+              <i
+                class="fas fa-arrow-up"
+                style="font-size: 20px; color: #fff"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Back to top functionality
+      document
+        .getElementById("back-to-top-kits")
+        .addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+  </body>
+</html>
